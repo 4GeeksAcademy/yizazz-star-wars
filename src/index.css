@@ -1,0 +1,11 @@
+.horizontal-scroll {
+    gap: 15px;
+}
+
+.scroll-item {
+    flex: 0 0 auto
+}
+
+.card{
+    width: 300px;
+}
