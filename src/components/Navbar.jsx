@@ -1,6 +1,12 @@
+import  useGlobalReducer  from "../hooks/useGlobalReducer";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+	const { store, dispatch } = useGlobalReducer();
+
+	const removeFavourite = (item) => {
+		dispatch({ type: "remove_from_favourites", payload: item });
+	};
 
 	return (
 		<nav className="navbar navbar-light bg-light">
@@ -8,10 +14,36 @@ export const Navbar = () => {
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1">Star Wars Logo</span>
 				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Favourites</button>
-					</Link>
+
+				<div className="dropdown">
+					<button
+						className="btn btn-primary dropdown-toggle"
+						type="button"
+						id="favouritesDropdown"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						Favoritos {store.favourites.length}
+					</button>
+					<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="favouritesDropdown">
+						{store.favourites.length === 0 && (
+							<li className="dropdown-item text-muted">No hay favoritos</li>
+						)}
+						{store.favourites.map((item) => (
+							<li
+								key={item.uid}
+								className="dropdown-item d-flex justify-content-between align-items-center"
+							>
+								<span>{item.name}</span>
+								<button
+									className="btn btn-sm btn-danger"
+									onClick={() => removeFavourite(item)}
+								>
+									X
+								</button>
+							</li>
+						))}
+					</ul>
 				</div>
 			</div>
 		</nav>
