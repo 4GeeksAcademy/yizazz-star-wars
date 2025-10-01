@@ -2,12 +2,12 @@ export const initialStore = () => {
   return {
     message: null,
     contacts: [],
-    favourites: []   // Lista de favoritos
+    favourites: []
   }
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
+  switch (action.type) {
     case 'add_task':
       const { id, color } = action.payload
       return {
@@ -29,5 +29,5 @@ export default function storeReducer(store, action = {}) {
 
     default:
       throw Error('Unknown action.');
-  }    
+  }
 }

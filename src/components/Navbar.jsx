@@ -39,7 +39,7 @@ export const Navbar = () => {
 									className="btn btn-sm btn-danger"
 									onClick={() => removeFavourite(item)}
 								>
-									X
+									<i className="fa-solid fa-x"></i>
 								</button>
 							</li>
 						))}

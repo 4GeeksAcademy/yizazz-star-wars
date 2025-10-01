@@ -1,5 +1,5 @@
 import { CharacterList } from "../components/CharactersList";
-import { PlanetList } from "../components/PlanetList"; // 🔹 importa PlanetList
+import { PlanetList } from "../components/PlanetList"; 
 
 export const PrincipalPage = () => {
     return (
@@ -12,7 +12,7 @@ export const PrincipalPage = () => {
             <div className="container h1 text-danger pt-5">
                 Planets
             </div>
-            <PlanetList />  {/* 🔹 reemplaza el carrusel fijo */}
+            <PlanetList /> 
         </div>
     );
 };
