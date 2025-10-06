@@ -53,7 +53,7 @@ export const PlanetsCard = ({ planet }) => {
                             <div className="d-flex justify-content-between">
                                 <a href="#" className="btn btn-primary mt-3">Learn More!</a>
                                 <a onClick={toggleFavourite} className="btn btn-secondary ml-2 mt-3 align-items-end">
-                                    ❤️
+                                    <i className="fa-solid fa-heart"></i>
                                 </a>
 
                             </div>

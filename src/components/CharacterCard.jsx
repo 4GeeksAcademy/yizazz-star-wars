@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import imagen from "../assets/img/rigo-baby.jpg";
 import  useGlobalReducer  from "../hooks/useGlobalReducer";
+import { Link } from "react-router-dom";
 
 
 export const CharacterCard = ({ character }) => {
@@ -54,9 +55,9 @@ export const CharacterCard = ({ character }) => {
                             <p className="hair-color m-0">Hair Color: {details.hair_color}</p>
                             <div className="eye-color">Eye Color: {details.eye_color}</div>
                             <div className="d-flex justify-content-between">
-                                <a href="#" className="btn btn-primary mt-3">Learn More!</a>
+                                <Link to={`/characterdetail/${character.uid}`} className="btn btn-primary mt-3">Learn More!</Link>
                                 <a onClick={toggleFavourite} className="btn btn-secondary ml-2 mt-3 align-items-end">
-                                    ❤️
+                                    <i className="fa-solid fa-heart"></i>
                                 </a>
 
                             </div>

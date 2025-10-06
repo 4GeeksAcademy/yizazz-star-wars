@@ -1,18 +1,33 @@
+import { act } from "react";
+
 export const initialStore = () => {
   return {
     message: null,
     contacts: [],
-    favourites: []   // Lista de favoritos
+    favourites: [],
+    characters: {},
   }
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
+  switch (action.type) {
     case 'add_task':
       const { id, color } = action.payload
       return {
         ...store,
         todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
+      };
+
+    case `load_characters`:
+      return {
+        ...store,
+        characters: { ...store.characters, ...action.payload }
+      }
+
+    case `add_character`:
+      return {
+        ...store,
+        characters: { ...store.characters, [action.payload.uid]: action.payload.data }
       };
 
     case 'add_to_favourites':
@@ -29,5 +44,5 @@ export default function storeReducer(store, action = {}) {
 
     default:
       throw Error('Unknown action.');
-  }    
+  }
 }
