@@ -12,6 +12,8 @@ import { CharacterCard } from "./components/CharacterCard";
 import { CharacterDetail } from "./pages/CharacterDetail";
 import { PrincipalPage } from "./pages/PrincipalPage";
 import { PlanetsCard } from "./components/PlanetsCard";
+import { PlanetDetail } from "./pages/PlanetDetail";
+
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,6 +33,9 @@ export const router = createBrowserRouter(
         <Route path="/charactercard" element={<CharacterCard />} />
         <Route path="/characterdetail/:uid" element={<CharacterDetail />} />
         <Route path="/planetscard" element={<PlanetsCard />} />
+        <Route path="/planetdetail" element={<PlanetDetail />} />
+        <Route path="/planet/:uid" element={<PlanetDetail />} />
+        
 
       </Route>
     )

@@ -6,6 +6,7 @@ export const initialStore = () => {
     contacts: [],
     favourites: [],
     characters: {},
+    planets: {}
   }
 }
 
@@ -41,6 +42,18 @@ export default function storeReducer(store, action = {}) {
         ...store,
         favourites: store.favourites.filter(item => item.uid !== action.payload.uid)
       };
+
+    case `load_planet`:
+      return {
+        ...store,
+        planets: { ...store.planets, ...action.payload }
+      };
+
+    case `add_planet`:
+      return {
+        ...store,
+        planets: { ...store.planets, [action.payload.uid]: action.payload.data }
+      }
 
     default:
       throw Error('Unknown action.');
