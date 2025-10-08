@@ -12,7 +12,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">Star Wars Logo</span>
+					<span className="navbar-brand mb-0 h1">Star Wars</span>
 				</Link>
 
 				<div className="dropdown">
@@ -36,10 +36,10 @@ export const Navbar = () => {
 							>
 								<span>{item.name}</span>
 								<button
-									className="btn btn-sm btn-danger"
+									className="btn btn-sm"
 									onClick={() => removeFavourite(item)}
 								>
-									X
+									<i className="fa-solid fa-trash-can"></i>
 								</button>
 							</li>
 						))}

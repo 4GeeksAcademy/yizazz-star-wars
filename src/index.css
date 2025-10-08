@@ -10,3 +10,7 @@
     width: 300px;
     flex: 0 0 auto;
 }
+
+.navbar-brand{
+    text-decoration: none !important
+}
